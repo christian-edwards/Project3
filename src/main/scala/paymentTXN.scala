@@ -1,10 +1,8 @@
 object paymentTXN {
+  val failureReasons = Array("Insufficient funds","Incorrect information","Transaction cancelled")
 
   def generate():String = {
-    val failureReasons = Array("Insufficient funds","Incorrect information","Transaction cancelled")
-
     val r = new scala.util.Random(System.currentTimeMillis)
-
     val x:Int = r.nextInt(100)
     if(x > 20){
       return "Y"
