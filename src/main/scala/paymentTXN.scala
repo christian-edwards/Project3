@@ -1,11 +1,10 @@
 class paymentTXN(){
 
   def generate():String = {
-    val failureReasons = Array("Insufficient funds","Invalid information","Transaction canceled")
+    val failureReasons = Array("Insufficient funds","Incorrect information","Transaction canceled")
 
     val r = new scala.util.Random(System.currentTimeMillis)
-    val x = r.nextInt()
-    print(x)
+    val x:Int = r.nextInt(100)
     if(x > 50){
       return "Y"
     } else {
