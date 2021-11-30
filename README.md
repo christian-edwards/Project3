@@ -12,3 +12,4 @@
 - Venkata Garlapati
 - Louis Duller
 - Dimitri
+- Korey Lo
