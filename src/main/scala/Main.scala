@@ -32,6 +32,7 @@ object Main {
     var i = 0
     for(i <-0 to 10){
       var output = ""
+      output += paymentTXN.generateOrderID + ","
       output += NameGenerator.generate(spark,namesMap) + ","
       output += Product.generate(spark,productMap) + ","
       output += AddressGenerator.generate(spark,_country_city) + ","
