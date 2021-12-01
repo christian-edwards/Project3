@@ -14,10 +14,13 @@ object Generator {
   // Load input files
   private val _country_city = _spark.sparkContext.textFile("input/CountryCities.csv")
     .map(x => x.split(",")).map(x => (x(0), x(1)))
+  private val _products = _spark.sparkContext.textFile("input/Products.csv")
+    .map(x=>x.split(",")).map(x=>(x(0),x(1),x(2),x(3)))
 
   // Call generate() from elsewhere
   def generate(): String = {
-    s"${PaymentTypeGenerator.generate()}," +
+    s"${ProductGenerator.generate()}," +
+      s"${PaymentTypeGenerator.generate()}," +
       s"${QuantityTransactionGenerator.generate()}," +
       s"${DateTimeGenerator.generate()}," +
       s"${AddressGenerator.generate()}," +
@@ -70,6 +73,13 @@ object Generator {
       else{
         payments(r.nextInt(4))
       }
+    }
+  }
+
+  private object ProductGenerator {
+    def generate(): String = {
+      val randomProduct = _products.takeSample(withReplacement = true,1)
+      s"${randomProduct(0)._1},${randomProduct(0)._4},${randomProduct(0)._3},${randomProduct(0)._2}"
     }
   }
 
