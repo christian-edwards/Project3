@@ -18,6 +18,7 @@ object Generator {
   def generate(): String = {
     DateTimeGenerator.generate()
     AddressGenerator.generate()
+    PaymentTransactionGenerator.generate()
   }
 
   private object AddressGenerator {
@@ -37,6 +38,20 @@ object Generator {
       val Date = dateStart.plusDays(days)
       val Time = timeStart.plusMinutes(minutes)
       s"$Date $Time"
+    }
+  }
+
+  private object PaymentTransactionGenerator {
+    val failureReasons: Array[String] = Array("Insufficient funds","Incorrect information","Transaction cancelled")
+
+    def generate(): String = {
+      val r = new scala.util.Random(System.currentTimeMillis)
+      val x: Int = r.nextInt(100)
+      if(x > 20) {
+        "Y"
+      } else {
+        s"N,${failureReasons(r.nextInt(3))}"
+      }
     }
   }
 }
