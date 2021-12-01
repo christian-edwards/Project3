@@ -18,6 +18,7 @@ object Generator {
       s"${QuantityTransactionGenerator.generate()}," +
       s"${DateTimeGenerator.generate()}," +
       s"${AddressGenerator.generate()}," +
+      s"${WebsiteGenerator.generate()}," +
       s"${PaymentTransactionGenerator.generate()}"
   }
 
@@ -125,6 +126,15 @@ object Generator {
         i += 100
       }
       i.toString
+    }
+  }
+
+  private object WebsiteGenerator {
+    private val _website = _spark.sparkContext.textFile("input/websites.csv")
+      .map(x => x.split(",")).map(x => x(0))
+
+    def generate(): String = {
+      _website.takeSample(withReplacement = true,1)(0)
     }
   }
 }
