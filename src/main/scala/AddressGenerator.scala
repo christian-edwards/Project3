@@ -12,7 +12,7 @@ object AddressGenerator {
     .map(x => x.split(",")).map(x => (x(0), x(1)))
 
   def generate(): String = {
-    val sample = _country_city.takeSample(withReplacement = true, 1)
-    s"${sample(0)._1},${sample(0)._2}"
+    val sample = _country_city.takeSample(withReplacement = true, 1)(0)
+    s"${sample._1},${sample._2}"
   }
 }
