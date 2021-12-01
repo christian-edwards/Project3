@@ -33,7 +33,7 @@ object Main {
       output += quantityTXN.generate + ","
       output += paymentTXN.generate*/
       println(output)
-      Thread.sleep(2000)
+      Thread.sleep(100)
     }
   }
 }

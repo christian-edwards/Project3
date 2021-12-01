@@ -16,7 +16,7 @@ object Generator {
     .map(x => x.split(",")).map(x => (x(0), x(1)))
 
   def generate(): String = {
-    s"${PaymentTypeGenerator.generate()}" +
+    s"${PaymentTypeGenerator.generate()}," +
       s"${DateTimeGenerator.generate()}," +
       s"${AddressGenerator.generate()}," +
       s"${PaymentTransactionGenerator.generate()}"
