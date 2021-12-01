@@ -45,13 +45,15 @@ object Generator {
   private object PaymentTransactionGenerator {
     val failureReasons: Array[String] = Array("Insufficient funds","Incorrect information","Transaction cancelled")
 
-    def generate(): String = {
+    def generate(): (String, String) = {
       val r = new scala.util.Random(System.currentTimeMillis)
       val x: Int = r.nextInt(100)
+      val orderID = java.util.UUID.randomUUID()
       if(x > 20) {
-        "Y"
+        val transactionID = java.util.UUID.randomUUID()
+        (s"$orderID",s"$transactionID,Y,")
       } else {
-        s"N,${failureReasons(r.nextInt(3))}"
+        (s"$orderID",s",N,${failureReasons(r.nextInt(3))}")
       }
     }
   }
@@ -136,8 +138,9 @@ object Generator {
   }
 
   def generate(): String = {
+    val payment_sample = PaymentTransactionGenerator.generate()
     val product_sample = ProductGenerator.generate()
-    s"PH_order_id," +
+    s"${payment_sample._1}," +
       s"${NameGenerator.generate()}," +
       s"${product_sample._1}," +
       s"${product_sample._2}," +
@@ -147,7 +150,6 @@ object Generator {
       s"${DateTimeGenerator.generate()}," +
       s"${AddressGenerator.generate()}," +
       s"${WebsiteGenerator.generate()}," +
-      s"PH_payment_transaction_id," +
-      s"${PaymentTransactionGenerator.generate()}"
+      s"${payment_sample._2}"
   }
 }
