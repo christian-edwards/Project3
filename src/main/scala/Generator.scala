@@ -1,14 +1,12 @@
 object Generator {
   // Suppress messages to console
   org.apache.log4j.Logger.getLogger("akka").setLevel(org.apache.log4j.Level.OFF)
-  org.apache.log4j.Logger.getLogger("hive").setLevel(org.apache.log4j.Level.OFF)
   org.apache.log4j.Logger.getLogger("org").setLevel(org.apache.log4j.Level.OFF)
 
   private val _spark = org.apache.spark.sql.SparkSession
     .builder
     .appName("Project3")
     .config("spark.master", "local")
-    .enableHiveSupport()
     .getOrCreate()
 
   // Call generate() from elsewhere
