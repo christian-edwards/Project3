@@ -32,6 +32,16 @@ object Generator {
     }
   }
 
+  private object NameGenerator {
+    private val _names = _spark.sparkContext.textFile("input/namesFile.csv")
+      .map(x => x.split(",")).map(x => (x(0),x(1)))
+
+    def generate(): String = {
+      val randomName = _names.takeSample(withReplacement = true, 1)(0)
+      s"${randomName._1},${randomName._2}"
+    }
+  }
+
   private object PaymentTransactionGenerator {
     val failureReasons: Array[String] = Array("Insufficient funds","Incorrect information","Transaction cancelled")
 
@@ -128,8 +138,7 @@ object Generator {
   def generate(): String = {
     val product_sample = ProductGenerator.generate()
     s"PH_order_id," +
-      s"PH_customer_id," +
-      s"PH_customer_name," +
+      s"${NameGenerator.generate()}," +
       s"${product_sample._1}," +
       s"${product_sample._2}," +
       s"${PaymentTypeGenerator.generate()}," +
