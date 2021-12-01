@@ -9,17 +9,6 @@ object Generator {
     .config("spark.master", "local")
     .getOrCreate()
 
-  // Call generate() from elsewhere
-  def generate(): String = {
-    s"${ProductGenerator.generate()}," +
-      s"${PaymentTypeGenerator.generate()}," +
-      s"${QuantityTransactionGenerator.generate()}," +
-      s"${DateTimeGenerator.generate()}," +
-      s"${AddressGenerator.generate()}," +
-      s"${WebsiteGenerator.generate()}," +
-      s"${PaymentTransactionGenerator.generate()}"
-  }
-
   private object AddressGenerator {
     private val _country_city = _spark.sparkContext.textFile("input/CountryCities.csv")
       .map(x => x.split(",")).map(x => (x(0), x(1)))
@@ -76,9 +65,9 @@ object Generator {
     private val _products = _spark.sparkContext.textFile("input/Products.csv")
       .map(x=>x.split(",")).map(x=>(x(0),x(1),x(2),x(3)))
 
-    def generate(): String = {
-      val randomProduct = _products.takeSample(withReplacement = true,1)
-      s"${randomProduct(0)._1},${randomProduct(0)._4},${randomProduct(0)._3},${randomProduct(0)._2}"
+    def generate(): (String, String, String) = {
+      val sample = _products.takeSample(withReplacement = true,1)(0)
+      (s"${sample._1},${sample._4}", s"${sample._3}", s"${sample._2}")
     }
   }
 
@@ -134,5 +123,22 @@ object Generator {
     def generate(): String = {
       _website.takeSample(withReplacement = true,1)(0)
     }
+  }
+
+  def generate(): String = {
+    val product_sample = ProductGenerator.generate()
+    s"PH_order_id," +
+      s"PH_customer_id," +
+      s"PH_customer_name," +
+      s"${product_sample._1}," +
+      s"${product_sample._2}," +
+      s"${PaymentTypeGenerator.generate()}," +
+      s"${QuantityTransactionGenerator.generate()}," +
+      s"${product_sample._3}," +
+      s"${DateTimeGenerator.generate()}," +
+      s"${AddressGenerator.generate()}," +
+      s"${WebsiteGenerator.generate()}," +
+      s"PH_payment_transaction_id," +
+      s"${PaymentTransactionGenerator.generate()}"
   }
 }
