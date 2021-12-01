@@ -3,7 +3,7 @@
 object quantityTXN {
   var theCount = 0  // counts # of times called, hopefully // used to generate trends ie. after a while, our business will grow
   var theCountess :Array[Int] = new Array(100)
-  val theWarehouse = Array("Camera Accessories", "Car Electronics & GPS", "Cell Phones & Accessories", "Computer & Accessories", "Computers & Accessories", "Digital Cameras", "Hard Drives", "Headphones", "Home Audio", "Home Security", "Media Players & Recorders", "Memory Cards", "Mirrorless System Lenses", "Portable Bluetooth Speakers", "Power Supplies", "Projection Screens & Material", "Security Cameras", "Smart Watches", "Solid State Drives", "Speaker Cables", "Speaker Systems", "Streaming Media Players", "TV", "TV Accessories & Parts", "Video Games", "Wireless Speakers")
+  val theWarehouse = Array("Camera Accessories", "Car Electronics & GPS", "Cell Phones & Accessories", "Computers & Accessories", "Digital Cameras", "Hard Drives", "Headphones", "Home Audio", "Home Security", "Media Players & Recorders", "Memory Cards", "Mirrorless System Lenses", "Portable Bluetooth Speakers", "Power Supplies", "Projection Screens & Material", "Security Cameras", "Smart Watches", "Solid State Drives", "Speaker Cables", "Speaker Systems", "Streaming Media Players", "TV", "TV Accessories & Parts", "Video Games", "Wireless Speakers")
   val rando = new scala.util.Random(System.currentTimeMillis)
   var i = 0
 
