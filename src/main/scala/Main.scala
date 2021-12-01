@@ -23,9 +23,13 @@ object Main {
     val _country_city = spark.sparkContext.textFile("input/CountryCities.csv")
       .map(x => x.split(",")).map(x => (x(0), x(1)))
 
+    val products = spark.sparkContext.textFile("input/Products.csv")
+    val productMap = products.map(x=>x.split(",")).map(x=>(x(0),x(1),x(2),x(3)))
+
     var i = 0
     for(i <-0 to 10){
       var output = ""
+      output += Product.generate(spark,productMap) + ","
       output += AddressGenerator.generate(spark,_country_city) + ","
       output += paymentType.generate + ","
       output += websiteGen.generate(spark,website_map) + ","
