@@ -11,12 +11,6 @@ object Generator {
     .enableHiveSupport()
     .getOrCreate()
 
-  // Load input files
-  private val _country_city = _spark.sparkContext.textFile("input/CountryCities.csv")
-    .map(x => x.split(",")).map(x => (x(0), x(1)))
-  private val _products = _spark.sparkContext.textFile("input/Products.csv")
-    .map(x=>x.split(",")).map(x=>(x(0),x(1),x(2),x(3)))
-
   // Call generate() from elsewhere
   def generate(): String = {
     s"${ProductGenerator.generate()}," +
@@ -28,6 +22,9 @@ object Generator {
   }
 
   private object AddressGenerator {
+    private val _country_city = _spark.sparkContext.textFile("input/CountryCities.csv")
+      .map(x => x.split(",")).map(x => (x(0), x(1)))
+
     def generate(): String = {
       val sample = _country_city.takeSample(withReplacement = true, 1)(0)
       s"${sample._1},${sample._2}"
@@ -77,6 +74,9 @@ object Generator {
   }
 
   private object ProductGenerator {
+    private val _products = _spark.sparkContext.textFile("input/Products.csv")
+      .map(x=>x.split(",")).map(x=>(x(0),x(1),x(2),x(3)))
+
     def generate(): String = {
       val randomProduct = _products.takeSample(withReplacement = true,1)
       s"${randomProduct(0)._1},${randomProduct(0)._4},${randomProduct(0)._3},${randomProduct(0)._2}"
