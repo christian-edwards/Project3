@@ -16,9 +16,10 @@ object Generator {
     .map(x => x.split(",")).map(x => (x(0), x(1)))
 
   def generate(): String = {
-    DateTimeGenerator.generate()
-    AddressGenerator.generate()
-    PaymentTransactionGenerator.generate()
+    s"${PaymentTypeGenerator.generate()}" +
+      s"${DateTimeGenerator.generate()}," +
+      s"${AddressGenerator.generate()}," +
+      s"${PaymentTransactionGenerator.generate()}"
   }
 
   private object AddressGenerator {
@@ -51,6 +52,21 @@ object Generator {
         "Y"
       } else {
         s"N,${failureReasons(r.nextInt(3))}"
+      }
+    }
+  }
+
+  private object PaymentTypeGenerator {
+    val payments: Array[String] = Array("Card", "Internet Banking", "UPI", "Wallet")
+
+    def generate(): String = {
+      val r = new scala.util.Random(System.currentTimeMillis())
+      val x = r.nextInt(100)
+      if (x > 20){
+        payments(r.nextInt(2))
+      }
+      else{
+        payments(r.nextInt(4))
       }
     }
   }

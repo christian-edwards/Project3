@@ -25,15 +25,15 @@ object Main {
 
     var i = 0
     for(i <-0 to 10){
-      var output = ""
-      output += AddressGenerator.generate(spark,_country_city) + ","
+      var output = Generator.generate()
+      /*output += AddressGenerator.generate(spark,_country_city) + ","
       output += paymentType.generate + ","
       output += websiteGen.generate(spark,website_map) + ","
       output += DateTimeGenerator.generate + ","
       output += quantityTXN.generate + ","
-      output += paymentTXN.generate
-      Thread.sleep(100)
+      output += paymentTXN.generate*/
       println(output)
+      Thread.sleep(2000)
     }
   }
 }
