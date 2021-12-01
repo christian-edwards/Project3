@@ -137,6 +137,7 @@ Canada,Dieppe
 Canada,Dollard-des-Ormeaux
 Canada,Donnacona
 Canada,Dorval
+Canada,Douglas
 Canada,Douro-Dummer
 Canada,Drayton Valley
 Canada,Drumheller
@@ -188,6 +189,7 @@ Canada,Guelph
 Canada,Guelph/Eramosa
 Canada,Halifax
 Canada,Halton Hills
+Canada,Hamilton
 Canada,Hamilton Township
 Canada,Hampstead
 Canada,Hanover
@@ -360,6 +362,7 @@ Canada,Pelham
 Canada,Pembroke
 Canada,Penetanguishene
 Canada,Penticton
+Canada,Perth
 Canada,Perth East
 Canada,Petawawa
 Canada,Peterborough
@@ -515,6 +518,7 @@ Canada,St. John's
 Canada,St. Marys
 Canada,St. Paul
 Canada,St. Thomas
+Canada,Stanley
 Canada,Ste. Anne
 Canada,Steinbach
 Canada,Stephenville
@@ -573,6 +577,7 @@ Canada,Vaughan
 Canada,Vegreville
 Canada,Vercheres
 Canada,Vernon
+Canada,Victoria
 Canada,Victoriaville
 Canada,View Royal
 Canada,Wainfleet
@@ -1715,6 +1720,7 @@ United Kingdom,Nantwich
 United Kingdom,Narborough
 United Kingdom,Neath
 United Kingdom,Neilston
+United Kingdom,Nelson
 United Kingdom,Neston
 United Kingdom,Netherton
 United Kingdom,New Alresford
@@ -1913,6 +1919,7 @@ United Kingdom,Rhosllanerchrugog
 United Kingdom,Rhuthun
 United Kingdom,Rhyl
 United Kingdom,Rhymney
+United Kingdom,Richmond
 United Kingdom,Rickmansworth
 United Kingdom,Ringwood
 United Kingdom,Ripley
@@ -1950,6 +1957,7 @@ United Kingdom,Runcorn
 United Kingdom,Rushall
 United Kingdom,Rushden
 United Kingdom,Ruskington
+United Kingdom,Rustington
 United Kingdom,Rutherglen
 United Kingdom,Ryde
 United Kingdom,Rye
@@ -2110,6 +2118,7 @@ United Kingdom,Stotfold
 United Kingdom,Stourbridge
 United Kingdom,Stowmarket
 United Kingdom,Stranraer
+United Kingdom,Stratford
 United Kingdom,Stratford-upon-Avon
 United Kingdom,Strathaven
 United Kingdom,Stratton Saint Margaret
@@ -2361,6 +2370,7 @@ United Kingdom,Wool
 United Kingdom,Woolton
 United Kingdom,Woolwich
 United Kingdom,Wootton
+United Kingdom,Worcester
 United Kingdom,Worcester Park
 United Kingdom,Wordsley
 United Kingdom,Workington
@@ -2590,10 +2600,12 @@ United States,Auburndale
 United States,Audubon
 United States,August
 United States,Augusta
+United States,Aurora
 United States,Austell
 United States,Austin
 United States,Austintown
 United States,Avenal
+United States,Avenel
 United States,Aventura
 United States,Avocado Heights
 United States,Avon
@@ -3218,6 +3230,7 @@ United States,Channahon
 United States,Channelview
 United States,Chantilly
 United States,Chanute
+United States,Chaparral
 United States,Chapel Hill
 United States,Chardon
 United States,Charles City
@@ -3277,6 +3290,7 @@ United States,Childress
 United States,Chili
 United States,Chillicothe
 United States,Chillum
+United States,Chino
 United States,Chino Hills
 United States,Chino Valley
 United States,Chippewa
@@ -3306,6 +3320,7 @@ United States,Clairton
 United States,Clanton
 United States,Clare
 United States,Claremont
+United States,Claremore
 United States,Clarence
 United States,Clarendon Hills
 United States,Clarinda
@@ -3886,6 +3901,7 @@ United States,El Dorado Hills
 United States,El Granada
 United States,El Mirage
 United States,El Monte
+United States,El Paso
 United States,El Paso de Robles
 United States,El Reno
 United States,El Rio
@@ -4221,12 +4237,14 @@ United States,Fraser
 United States,Frederick
 United States,Fredericksburg
 United States,Frederickson
+United States,Fredonia
 United States,Freehold
 United States,Freeland
 United States,Freeport
 United States,Freetown
 United States,Fremont
 United States,French Valley
+United States,Fresno
 United States,Fridley
 United States,Friendly
 United States,Friendship Heights Village
@@ -4322,6 +4340,7 @@ United States,Gilroy
 United States,Girard
 United States,Gladeview
 United States,Gladewater
+United States,Gladstone
 United States,Glasgow
 United States,Glassboro
 United States,Glassmanor
@@ -4387,6 +4406,7 @@ United States,Goshen
 United States,Goulds
 United States,Gouverneur
 United States,Gowanda
+United States,Grafton
 United States,Graham
 United States,Grain Valley
 United States,Grambling
@@ -4461,6 +4481,7 @@ United States,Gresham Park
 United States,Gretna
 United States,Gridley
 United States,Griffin
+United States,Griffith
 United States,Grimes
 United States,Grinnell
 United States,Griswold
@@ -4478,6 +4499,7 @@ United States,Grover Beach
 United States,Groves
 United States,Groveton
 United States,Grovetown
+United States,Guadalupe
 United States,Guerneville
 United States,Guilderland
 United States,Guilford
@@ -4552,6 +4574,7 @@ United States,Hardyston
 United States,Harker Heights
 United States,Harlan
 United States,Harleysville
+United States,Harlingen
 United States,Harper Woods
 United States,Harrah
 United States,Harrietstown
@@ -4760,6 +4783,7 @@ United States,Horn Lake
 United States,Hornell
 United States,Hornsby Bend
 United States,Horseheads
+United States,Horsham
 United States,Hot Springs
 United States,Hot Springs Village
 United States,Houghton
@@ -4857,7 +4881,7 @@ United States,Isanti
 United States,Iselin
 United States,Ishpeming
 United States,Isla Vista
-United States,Islamorada
+United States,"Islamorada, Village of Islands"
 United States,Island Lake
 United States,Islip
 United States,Islip Terrace
@@ -5017,6 +5041,7 @@ United States,Kings Park
 United States,Kings Park West
 United States,Kings Point
 United States,Kingsburg
+United States,Kingsbury
 United States,Kingsland
 United States,Kingsport
 United States,Kingston
@@ -5065,6 +5090,7 @@ United States,La Junta
 United States,La Marque
 United States,La Mesa
 United States,La Mirada
+United States,La Palma
 United States,La Plata
 United States,La Porte
 United States,La Presa
@@ -5077,6 +5103,7 @@ United States,La Vista
 United States,LaBelle
 United States,Lacey
 United States,Lackawanna
+United States,Lackawaxen
 United States,Lackland AFB
 United States,Lacombe
 United States,Laconia
@@ -5170,6 +5197,7 @@ United States,Lamont
 United States,Lampasas
 United States,Lancaster
 United States,Land O' Lakes
+United States,Landen
 United States,Lander
 United States,Landover
 United States,Lanett
@@ -5183,6 +5211,7 @@ United States,Lapeer
 United States,Laplace
 United States,Laramie
 United States,Larchmont
+United States,Laredo
 United States,Largo
 United States,Larkfield-Wikiup
 United States,Larkspur
@@ -5198,6 +5227,7 @@ United States,Lauderdale Lakes
 United States,Lauderdale-by-the-Sea
 United States,Lauderhill
 United States,Laughlin
+United States,Laurel
 United States,Laurel Bay
 United States,Laurel Hill
 United States,Laurence Harbor
@@ -5278,6 +5308,7 @@ United States,Lihue
 United States,Lilburn
 United States,Lima
 United States,Limerick
+United States,Lincoln
 United States,Lincoln City
 United States,Lincoln Park
 United States,Lincoln Village
@@ -5332,6 +5363,7 @@ United States,Lockhart
 United States,Lockport
 United States,Lockwood
 United States,Locust Grove
+United States,Lodi
 United States,Logan
 United States,Logansport
 United States,Loganville
@@ -5433,6 +5465,7 @@ United States,Macedonia
 United States,Machesney Park
 United States,Mack
 United States,Macomb
+United States,Macon
 United States,Madeira
 United States,Madera
 United States,Madera Acres
@@ -5537,6 +5570,7 @@ United States,Marshalltown
 United States,Marshfield
 United States,Martha Lake
 United States,Martic
+United States,Martin
 United States,Martinez
 United States,Martins Ferry
 United States,Martinsburg
@@ -5616,6 +5650,7 @@ United States,Mechanicville
 United States,Medfield
 United States,Medford
 United States,Media
+United States,Medina
 United States,Medulla
 United States,Medway
 United States,Mehlville
@@ -5626,6 +5661,7 @@ United States,Melrose Park
 United States,Melville
 United States,Melvindale
 United States,Memphis
+United States,Mena
 United States,Menasha
 United States,Mendham
 United States,Mendon
@@ -5642,6 +5678,7 @@ United States,Mentor-on-the-Lake
 United States,Mequon
 United States,Meraux
 United States,Merced
+United States,Mercedes
 United States,Mercer Island
 United States,Mercerville
 United States,Meredith
@@ -5702,7 +5739,7 @@ United States,Mila Doce
 United States,Milan
 United States,Miles City
 United States,Milford
-United States,Milford City
+United States,Milford city
 United States,Milford Mill
 United States,Mililani Mauka
 United States,Mililani Town
@@ -5886,6 +5923,7 @@ United States,Mundelein
 United States,Munford
 United States,Munhall
 United States,Munroe Falls
+United States,Munster
 United States,Murfreesboro
 United States,Murillo
 United States,Murphy
@@ -6287,6 +6325,7 @@ United States,Opelika
 United States,Opelousas
 United States,Opp
 United States,Oradell
+United States,Orange
 United States,Orange Beach
 United States,Orange City
 United States,Orange Cove
@@ -6347,6 +6386,7 @@ United States,Oxnard
 United States,Oxon Hill
 United States,Oyster Bay
 United States,Ozark
+United States,Pace
 United States,Pacific
 United States,Pacific Grove
 United States,Pacifica
@@ -6358,6 +6398,7 @@ United States,Pahrump
 United States,Painesville
 United States,Paintsville
 United States,Palatine
+United States,Palatka
 United States,Palermo
 United States,Palestine
 United States,Palisades Park
@@ -6392,6 +6433,7 @@ United States,Pana
 United States,Panama City
 United States,Panama City Beach
 United States,Panthersville
+United States,Paola
 United States,Paoli
 United States,Papillion
 United States,Paradise
@@ -6412,6 +6454,7 @@ United States,Parkville
 United States,Parkway
 United States,Parkwood
 United States,Parlier
+United States,Parma
 United States,Parma Heights
 United States,Parole
 United States,Parsippany-Troy Hills
@@ -6643,6 +6686,8 @@ United States,Portage Lakes
 United States,Portales
 United States,Porter
 United States,Porters Neck
+United States,Porterville
+United States,Portland
 United States,Portsmouth
 United States,Posen
 United States,Post
@@ -6683,6 +6728,7 @@ United States,Princeton
 United States,Princeton Meadows
 United States,Prineville
 United States,Prior Lake
+United States,Progreso
 United States,Progress
 United States,Progress Village
 United States,Prospect
@@ -6961,10 +7007,13 @@ United States,Ruskin
 United States,Russells Point
 United States,Russellville
 United States,Ruston
+United States,Rutherford
 United States,Rutland
+United States,Rye
 United States,Rye Brook
 United States,Sachse
 United States,Saco
+United States,Sacramento
 United States,Saddle Brook
 United States,Saddlebrooke
 United States,Safety Harbor
@@ -6972,10 +7021,12 @@ United States,Safford
 United States,Saginaw
 United States,Sahuarita
 United States,Saks
+United States,Salamanca
 United States,Salem
 United States,Salem Lakes
 United States,Salida
 United States,Salina
+United States,Salinas
 United States,Saline
 United States,Salisbury
 United States,Sallisaw
@@ -6987,20 +7038,37 @@ United States,Sammamish
 United States,Samsula-Spruce Creek
 United States,San Angelo
 United States,San Anselmo
+United States,San Antonio
 United States,San Benito
 United States,San Bernardino
 United States,San Bruno
 United States,San Buenaventura
+United States,San Carlos
 United States,San Carlos Park
+United States,San Clemente
+United States,San Diego
 United States,San Diego Country Estates
 United States,San Dimas
 United States,San Elizario
+United States,San Fernando
+United States,San Francisco
+United States,San Gabriel
+United States,San Jacinto
+United States,San Jose
+United States,San Juan
 United States,San Juan Capistrano
 United States,San Leandro
 United States,San Leon
+United States,San Lorenzo
+United States,San Luis
 United States,San Luis Obispo
+United States,San Marcos
 United States,San Marino
+United States,San Martin
 United States,San Mateo
+United States,San Pablo
+United States,San Rafael
+United States,San Ramon
 United States,San Tan Valley
 United States,Sanatoga
 United States,Sand Lake
@@ -7019,11 +7087,18 @@ United States,Sanger
 United States,Sanibel
 United States,Sans Souci
 United States,Sansom Park
+United States,Santa Ana
+United States,Santa Barbara
 United States,Santa Clara
 United States,Santa Clarita
+United States,Santa Cruz
+United States,Santa Fe
 United States,Santa Fe Springs
+United States,Santa Maria
 United States,Santa Monica
 United States,Santa Paula
+United States,Santa Rosa
+United States,Santa Teresa
 United States,Santaquin
 United States,Santee
 United States,Sappington
@@ -7127,6 +7202,7 @@ United States,Sevierville
 United States,Seville
 United States,Seward
 United States,Sewickley
+United States,Seymour
 United States,Shady Hills
 United States,Shady Side
 United States,Shafter
@@ -7235,6 +7311,7 @@ United States,Snowflake
 United States,Snyder
 United States,Snyderville
 United States,Socastee
+United States,Socorro
 United States,Soddy-Daisy
 United States,Sodus
 United States,Solana Beach
@@ -7250,6 +7327,7 @@ United States,Somers Point
 United States,Somerset
 United States,Somersworth
 United States,Somerton
+United States,Somerville
 United States,Sonoma
 United States,Sonora
 United States,Soquel
@@ -7348,6 +7426,7 @@ United States,Southgate
 United States,Southington
 United States,Southlake
 United States,Southold
+United States,Southport
 United States,Southside
 United States,Southwest Ranches
 United States,Southwick
@@ -7531,6 +7610,7 @@ United States,Sun Lakes
 United States,Sun Prairie
 United States,Sun Valley
 United States,Sun Village
+United States,Sunbury
 United States,Sunland Park
 United States,Sunny Isles Beach
 United States,Sunnyside
@@ -7571,6 +7651,7 @@ United States,Syracuse
 United States,Tabernacle
 United States,Tabor City
 United States,Tacoma
+United States,Taft
 United States,Tahlequah
 United States,Takoma Park
 United States,Talent
@@ -7679,6 +7760,7 @@ United States,Titusville
 United States,Tiverton
 United States,Tobyhanna
 United States,Toccoa
+United States,Toledo
 United States,Tolland
 United States,Tolleson
 United States,Tomah
@@ -7710,6 +7792,7 @@ United States,Tredyffrin
 United States,Tremonton
 United States,Trenton
 United States,Triangle
+United States,Trinidad
 United States,Trinity
 United States,Trooper
 United States,Trophy Club
@@ -7832,6 +7915,7 @@ United States,Valley Cottage
 United States,Valley Falls
 United States,Valley Park
 United States,Valley Stream
+United States,Valparaiso
 United States,Valrico
 United States,Van Buren
 United States,Van Wert
@@ -7848,6 +7932,7 @@ United States,Verde Village
 United States,Vermilion
 United States,Vermillion
 United States,Vernal
+United States,Vernon
 United States,Vernon Hills
 United States,Vero Beach
 United States,Vero Beach South
@@ -7857,6 +7942,7 @@ United States,Vestal
 United States,Vestavia Hills
 United States,Vicksburg
 United States,Victor
+United States,Victoria
 United States,Victorville
 United States,Vidalia
 United States,Vidor
@@ -7882,6 +7968,7 @@ United States,Vinita
 United States,Vinton
 United States,Viola
 United States,Violet
+United States,Virginia
 United States,Virginia Beach
 United States,Visalia
 United States,Vista
@@ -7963,6 +8050,7 @@ United States,Warrenton
 United States,Warrenville
 United States,Warrington
 United States,Warsaw
+United States,Warwick
 United States,Wasco
 United States,Waseca
 United States,Washington
@@ -7975,6 +8063,8 @@ United States,Watauga
 United States,Watchung
 United States,Waterboro
 United States,Waterbury
+United States,Waterford
+United States,Waterloo
 United States,Watertown
 United States,Watertown Town
 United States,Waterville
@@ -8367,6 +8457,7 @@ United States,Zachary
 United States,Zanesville
 United States,Zapata
 United States,Zebulon
+United States,Zeeland
 United States,Zephyrhills
 United States,Zephyrhills South
 United States,Zephyrhills West
