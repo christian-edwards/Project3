@@ -1,5 +1,7 @@
 object paymentType {
-  val payments = Array("card", "Internet Banking", "UPI", "Wallet")
+
+  val payments = Array("Card", "Internet Banking", "UPI", "Wallet")
+
 
   def generate(): String ={
     val r = new scala.util.Random(System.currentTimeMillis())
