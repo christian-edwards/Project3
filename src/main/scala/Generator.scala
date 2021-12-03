@@ -116,7 +116,7 @@ object Generator {
     def generate(category: String): String = {
       val ID = this.theWarehouse.indexOf(category)
       if (ID < 0) {
-        return "WTF was that again?"
+        return "Error: Category Not Found"
       }
       this.theCountess(ID) += 1 // instead of generic count
       i = 0

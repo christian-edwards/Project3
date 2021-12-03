@@ -10,7 +10,7 @@ import scala.collection.JavaConverters._
 
 object ConsumerPlayground extends App {
 
-  val topicName = "test-1"
+  val topicName = "sql_dolphins"
 
   val consumerProperties = new Properties()
   consumerProperties.setProperty(BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")

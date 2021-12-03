@@ -8,7 +8,7 @@ import org.apache.spark.sql.SparkSession
 object Main {
   def main(args: Array[String]): Unit = {
 
-    val topicName = "test-1"
+    val topicName = "hadoop_elephants"
 
     val producerProperties = new Properties()
     producerProperties.setProperty(
