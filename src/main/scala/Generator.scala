@@ -79,7 +79,7 @@ object Generator {
 
     def generate(): (String, String, String) = {
       val sample = _products.takeSample(withReplacement = true,1)(0)
-      (s"${sample._1},${sample._4}", s"${sample._3}", s"${sample._2}")
+      (s"${sample._1},${sample._4}", s"${sample._3}", s"$${sample._2}")
     }
   }
 
