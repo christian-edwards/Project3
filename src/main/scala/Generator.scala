@@ -120,9 +120,12 @@ object Generator {
       }
       this.theCountess(ID) += 1 // instead of generic count
       i = 0
-      i = this.rando.nextInt(100)
-      if (this.theCountess(ID) >= 10) { // insert various conditions here
-        i += 100
+      if (this.theCountess(ID) > 25) { // copy of generate()  // insert various conditions here
+        this.i  = this.rando.nextInt(250) + 250 // upToRoof + floor
+      } else if (this.theCountess(ID) > 10) {
+        this.i  = this.rando.nextInt(150) + 100
+      } else {
+        this.i = this.rando.nextInt(100)
       }
       i.toString
     }
@@ -145,7 +148,7 @@ object Generator {
       s"${product_sample._1}," +
       s"${product_sample._2}," +
       s"${PaymentTypeGenerator.generate()}," +
-      s"${QuantityTransactionGenerator.generate()}," +
+      s"${QuantityTransactionGenerator.generate(product_sample._2)}," +
       s"${product_sample._3}," +
       s"${DateTimeGenerator.generate()}," +
       s"${AddressGenerator.generate()}," +
