@@ -10,7 +10,11 @@ import scala.collection.JavaConverters._
 
 object ConsumerPlayground extends App {
 
-  val topicName = "sql_dolphins"
+  var c = new CSV()
+  c.writeHeader()
+
+  // val topicName = "sql_dolphins"
+  val topicName = "hadoop_elephants"
 
   val consumerProperties = new Properties()
   consumerProperties.setProperty(BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
@@ -33,8 +37,7 @@ object ConsumerPlayground extends App {
       while (recordIterator.hasNext) {
         val record: ConsumerRecord[Int, String] = recordIterator.next()
         println(s"| ${record.key()} | ${record.value()} | ${record.partition()} | ${record.offset()} |")
-        //val csvTrip = record.value()
-
+        c.append(s"${record.value()}")
       }
     }
 
