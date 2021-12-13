@@ -69,15 +69,7 @@ object Main {
     while (true) {
       i+=1
       var output = ""
-      output += NameGenerator.generate(spark, namesMap) + ","
-      output += Product.generate(spark, productMap) + ","
-      output += AddressGenerator.generate(spark, _country_city) + ","
-      output += paymentType.generate + ","
-      output += websiteGen.generate(spark, website_map) + ","
-      output += DateTimeGenerator.generate + ","
-      output += quantityTXN.generate + ","
-      output += paymentTXN.generate
-      //Generator.generate()
+      output += Generator.generate()
       Thread.sleep(2000)//2 seconds
       println(output)
       producer.send(new ProducerRecord[Int, String](topicName, i, output))
