@@ -1,6 +1,7 @@
 import java.util.Properties
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig, ProducerRecord}
 import org.apache.kafka.common.serialization.{IntegerSerializer, StringSerializer}
+import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.SparkSession
 
 
@@ -8,7 +9,7 @@ object Main {
 
   def main(args: Array[String]): Unit = {
 
-    val topicName = "test-1"
+    val topicName = "hadoop_elephants"
 
     val producerProperties = new Properties()
     producerProperties.setProperty(
@@ -50,18 +51,26 @@ object Main {
     val names = spark.sparkContext.textFile("input/namesFile.csv")
     val namesMap = names.map(x => x.split(",")).map(x => (x(0), x(1)))
 
+    def produceData2Stream(spark: SparkSession, namesMap:RDD[(String,String)], productMap:RDD[(String,String,String,String)], _country_city:RDD[(String,String)], website_map:RDD[String] ):String={
+      val output = List(
+        NameGenerator.generate(spark,namesMap),
+        Product.generate(spark,productMap),
+        AddressGenerator.generate(spark,_country_city),
+        paymentType.generate,
+        websiteGen.generate(spark,website_map),
+        DateTimeGenerator.generate,
+        quantityTXN.generate,
+        paymentTXN.generate)
+      output.mkString(",")
+    }
+
+
     var i = 0
-    for (i <- 0 to 10) {
+    while (true) {
+      i+=1
       var output = ""
-      output += NameGenerator.generate(spark, namesMap) + ","
-      output += Product.generate(spark, productMap) + ","
-      output += AddressGenerator.generate(spark, _country_city) + ","
-      output += paymentType.generate + ","
-      output += websiteGen.generate(spark, website_map) + ","
-      output += DateTimeGenerator.generate + ","
-      output += quantityTXN.generate + ","
-      output += paymentTXN.generate
-      Thread.sleep(100)
+      output += Generator.generate()
+      Thread.sleep(2000)//2 seconds
       println(output)
       producer.send(new ProducerRecord[Int, String](topicName, i, output))
 
