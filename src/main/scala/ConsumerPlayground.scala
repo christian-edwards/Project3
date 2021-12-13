@@ -19,7 +19,7 @@ object ConsumerPlayground extends App {
   val consumerProperties = new Properties()
   consumerProperties.setProperty(BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
   consumerProperties.setProperty(GROUP_ID_CONFIG, "group-id-2")
-  consumerProperties.setProperty(AUTO_OFFSET_RESET_CONFIG, "earliest")
+  consumerProperties.setProperty(AUTO_OFFSET_RESET_CONFIG, "latest")
   consumerProperties.setProperty(KEY_DESERIALIZER_CLASS_CONFIG, classOf[IntegerDeserializer].getName)
   consumerProperties.setProperty(VALUE_DESERIALIZER_CLASS_CONFIG, classOf[StringDeserializer].getName)
   consumerProperties.setProperty(ENABLE_AUTO_COMMIT_CONFIG, "false")
