@@ -3,6 +3,8 @@ import scala.collection.mutable.Queue
 
 object paymentTXN {
   val failureReasons = Array("Insufficient funds","Incorrect information","Transaction cancelled")
+  val uniqueId = new Queue[UUID]
+  val OrderId = new Queue[UUID]
 
   def generate():String = {
     val r = new scala.util.Random(System.currentTimeMillis)
@@ -18,13 +20,12 @@ object paymentTXN {
     }
   }
   def generateTxID(): String = {
-    val uniqId = new Queue[UUID]
-    uniqId.enqueue(UUID.randomUUID())
-    return uniqId.dequeue().toString
+    uniqueId.enqueue(UUID.randomUUID())
+    return uniqueId.dequeue().toString
   }
 
   def generateOrderID(): String ={
-    val OrderId = new Queue[UUID]
+
     OrderId.enqueue(UUID.randomUUID())
     return OrderId.dequeue().toString
   }
