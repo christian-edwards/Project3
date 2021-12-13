@@ -49,7 +49,7 @@ object Generator {
       val r = new scala.util.Random(System.currentTimeMillis)
       val x: Int = r.nextInt(100)
       val orderID = java.util.UUID.randomUUID()
-      if(x > 20) {
+      if (x > 20) {
         val transactionID = java.util.UUID.randomUUID()
         (s"$orderID",s"$transactionID,Y,")
       } else {
@@ -64,10 +64,9 @@ object Generator {
     def generate(): String = {
       val r = new scala.util.Random(System.currentTimeMillis())
       val x = r.nextInt(100)
-      if (x > 20){
+      if (x > 20) {
         payments(r.nextInt(2))
-      }
-      else{
+      } else {
         payments(r.nextInt(4))
       }
     }
@@ -79,7 +78,7 @@ object Generator {
 
     def generate(): (String, String, String) = {
       val sample = _products.takeSample(withReplacement = true,1)(0)
-      (s"${sample._1},${sample._4}", s"${sample._3}", s"$${sample._2}")
+      (s"${sample._1},${sample._4}", s"${sample._3}", "$" + s"${sample._2}")
     }
   }
 
