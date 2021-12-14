@@ -43,7 +43,7 @@ object AnalyticsEngine {
       inLine.split(" ")(0).toUpperCase() match{
         case "QUERY1" =>
           //TODO: Query 1
-          df.sparkSession.sql(s"SELECT t1.payment_type, round(sum(total_price),2) AS payment_totals FROM (SELECT payment_type,qty * substring(price,2) as total_price FROM global_temp.InputData WHERE payment_txn_success == 'Y') t1 GROUP BY payment_type ORDER BY payment_totals desc").show()
+          df.sparkSession.sql(s"SELECT t1.payment_type, Concat('$$',round(sum(total_price),2)) AS payment_totals_in_billions FROM (SELECT payment_type,qty * substring(price,2) as total_price FROM global_temp.InputData WHERE payment_txn_success == 'Y') t1 GROUP BY payment_type ORDER BY payment_totals_in_billions desc").show()
         case "QUERY2" =>
           df.sparkSession.sql(s"with "+
             "cte1 as (select payment_txn_success, format_number(count(*)/(select count(*) from global_temp.InputData)*100, 2) as Percent from global_temp.InputData group by payment_txn_success order by Percent desc), "+
