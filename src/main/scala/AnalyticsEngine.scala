@@ -40,7 +40,7 @@ object AnalyticsEngine {
       print("Query: select ")
       val inLine = readLine()
 
-      inLine.toUpperCase match{
+      inLine.split(" ")(0).toUpperCase() match{
         case "QUERY1" =>
           //TODO: Query 1
         case "QUERY2" =>
