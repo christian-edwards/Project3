@@ -26,7 +26,7 @@ class CSV {
     var pw = new PrintWriter(new FileOutputStream(
       new File("Stream.csv"),
       false /* append = true */));
-    pw.write(str+" \n" )
+    pw.write(str+"\n" )
     pw.close
   }
 
