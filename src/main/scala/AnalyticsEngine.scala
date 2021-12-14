@@ -29,7 +29,7 @@ object AnalyticsEngine {
       .add("payment_txn_id",StringType,true)
       .add("payment_txn_success",StringType,true)
       .add("failure_reason",StringType,true)
-    val df = spark.read.schema(schema).csv("transactions.csv")
+    val df = spark.read.schema(schema).csv("transactions.csv").cache()
     df
   }
 
@@ -53,7 +53,20 @@ object AnalyticsEngine {
           //TODO: Query 3
           df.sparkSession.sql(s"Select product_name,sum(qty) total_qty FROM global_temp.InputData GROUP BY product_name ORDER BY total_qty desc").show(10)
         case "QUERY4" =>
-          //TODO: Query 4
+          // Top 10 highest earning days
+          df.where("payment_txn_success = 'Y'")
+            .withColumn("date_format", org.apache.spark.sql.functions.substring(org.apache.spark.sql.functions.col("datetime"), 0, 10))
+            .withColumn("price_format", org.apache.spark.sql.functions.regexp_replace(org.apache.spark.sql.functions.col("price"), "[$, ]", ""))
+            .withColumn("earnings", org.apache.spark.sql.functions.col("qty") * org.apache.spark.sql.functions.col("price_format"))
+            .select("date_format", "earnings")
+            .groupBy("date_format")
+            .agg(org.apache.spark.sql.functions.sum("earnings"))
+            .withColumn("earnings_format", org.apache.spark.sql.functions.format_number(org.apache.spark.sql.functions.col("sum(earnings)"), 2))
+            .withColumnRenamed("date_format", "Date")
+            .withColumnRenamed("earnings_format", "Daily_Earnings_($)")
+            .select("Date", "Daily_Earnings_($)")
+            .limit(10)
+            .show()
         case "QUERY5" =>
           //TODO: Query 5
         case "QUERY6" =>
@@ -87,5 +100,21 @@ object AnalyticsEngine {
       }
       */
     }
+  }
+
+  def main(args: Array[String]): Unit = {
+    org.apache.log4j.Logger.getLogger("akka").setLevel(org.apache.log4j.Level.OFF)
+    org.apache.log4j.Logger.getLogger("hive").setLevel(org.apache.log4j.Level.OFF)
+    org.apache.log4j.Logger.getLogger("org").setLevel(org.apache.log4j.Level.OFF)
+
+    val spark = SparkSession
+      .builder
+      .appName("Project3_AnalyticsEngine")
+      .config("spark.master", "local")
+      .enableHiveSupport()
+      .getOrCreate()
+
+    Loop(Load(spark))
+    spark.stop()
   }
 }
