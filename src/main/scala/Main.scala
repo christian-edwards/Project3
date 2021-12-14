@@ -66,21 +66,15 @@ object Main {
 
 
     var i = 0
-    /*
-    val outFile = new CSV
-    outFile.writeHeader()
-    while (i < 20) {
+    while (true) {
       i+=1
       var output = ""
       output += Generator.generate()
-      // Thread.sleep(2000)//2 seconds
+       Thread.sleep(2000)//2 seconds
       println(output)
-      //producer.send(new ProducerRecord[Int, String](topicName, i, output))
-      outFile.append(output)
 
-    }*/
-    AnalyticsEngine.Loop(AnalyticsEngine.Load(spark))
-    //producer.flush()
+    }
+    producer.flush()
 
   }
 }
