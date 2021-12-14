@@ -39,6 +39,35 @@ object AnalyticsEngine {
     while(exit){
       print("Query: select ")
       val inLine = readLine()
+
+      inLine.split(" ")(0).toUpperCase() match{
+        case "QUERY1" =>
+          //TODO: Query 1
+        case "QUERY2" =>
+          df.sparkSession.sql(s"with "+
+            "cte1 as (select payment_txn_success, format_number(count(*)/(select count(*) from global_temp.InputData)*100, 2) as Percent from global_temp.InputData group by payment_txn_success order by Percent desc), "+
+            "cte2 as (select failure_reason, format_number(count(*)/(select count(*) from global_temp.InputData where payment_txn_success == 'N')*100, 2) as Percent from global_temp.InputData where payment_txn_success == 'N' group by failure_reason order by Percent desc) "+
+            "select * from cte1 union select * from cte2 ").show(false)
+        case "QUERY3" =>
+          //TODO: Query 3
+        case "QUERY4" =>
+          //TODO: Query 4
+        case "QUERY5" =>
+          //TODO: Query 5
+        case "QUERY6" =>
+          df.sparkSession.sql(s"select product_category, count(*) as Sales from global_temp.InputData where payment_txn_success == 'Y' group by product_category order by Sales asc").show(false)
+        case "EXIT" =>
+          return
+        case default =>
+          try {
+            //df.sparkSession.sql("select * from global_temp.InputData").show()
+            df.sparkSession.sql(s"""select $inLine""").show(2000)
+          } catch {
+            case x: org.apache.spark.sql.AnalysisException => println("Please enter valid input or \"EXIT\" to exit.") // in case query is wrong
+          }
+      }
+
+      /*
       if(inLine.split(" ")(0).toUpperCase() == "EXIT"){
         exit = false
       } else if(inLine.split(" ")(0).toUpperCase() == "QUERY2"){
@@ -54,6 +83,7 @@ object AnalyticsEngine {
       } catch {
         case x: org.apache.spark.sql.AnalysisException => println("incorrect query") // in case query is wrong
       }
+      */
     }
   }
 }
