@@ -72,6 +72,7 @@ object Main {
       output += Generator.generate()
        Thread.sleep(2000)//2 seconds
       println(output)
+      producer.send(new ProducerRecord[Int, String](topicName, i, output))
 
     }
     producer.flush()
