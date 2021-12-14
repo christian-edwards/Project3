@@ -66,7 +66,7 @@ object AnalyticsEngine {
             .limit(10)
             .show()
         case "QUERY5" =>
-          //TODO: Query 5
+             df.sparkSession.sql(s"SELECT tbl3. city AS City, COUNT(tbl3.order_id) AS Traffic FROM (SELECT * FROM global_temp.InputData WHERE ecommerce_website_name IN (SELECT ecommerce_website_name FROM (SELECT ecommerce_website_name, count(*) AS traffic FROM global_temp.InputData GROUP BY ecommerce_website_name) AS tbl1 ORDER BY tbl1.traffic DESC LIMIT 1)) AS tbl3 GROUP BY tbl3.city ORDER BY Traffic DESC").show()
         case "QUERY6" =>
           df.sparkSession.sql(s"select product_category, count(*) as Sales from global_temp.InputData where payment_txn_success == 'Y' group by product_category order by Sales asc").show(false)
         case "EXIT" =>
