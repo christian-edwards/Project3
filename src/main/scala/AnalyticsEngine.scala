@@ -59,7 +59,12 @@ object AnalyticsEngine {
         case "EXIT" =>
           return
         case default =>
-          println("Please enter valid input or \"EXIT\" to exit.")
+          try {
+            //df.sparkSession.sql("select * from global_temp.InputData").show()
+            df.sparkSession.sql(s"""select $inLine""").show(2000)
+          } catch {
+            case x: org.apache.spark.sql.AnalysisException => println("Please enter valid input or \"EXIT\" to exit.") // in case query is wrong
+          }
       }
 
       /*
