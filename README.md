@@ -10,5 +10,5 @@
 - Luka Khuzaurashvili
 - Venkata Garlapati
 - Louis Duller
-- Dimitri
+- Dimitrii Karanin
 - Korey Lo
