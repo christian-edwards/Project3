@@ -63,6 +63,7 @@ object AnalyticsEngine {
             .select("date_format", "earnings")
             .groupBy("date_format")
             .agg(org.apache.spark.sql.functions.sum("earnings"))
+            .orderBy(org.apache.spark.sql.functions.desc("sum(earnings)"))
             .withColumn("earnings_format", org.apache.spark.sql.functions.format_number(org.apache.spark.sql.functions.col("sum(earnings)"), 2))
             .withColumnRenamed("date_format", "Date")
             .withColumnRenamed("earnings_format", "Daily_Earnings_($)")
