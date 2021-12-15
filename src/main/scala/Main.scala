@@ -13,7 +13,7 @@ object Main {
 
     val producerProperties = new Properties()
     producerProperties.setProperty(
-      ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092"
+      ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, sys.env("sm")//localhost:9092
     )
     producerProperties.setProperty(
       ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, classOf[IntegerSerializer].getName
@@ -66,11 +66,11 @@ object Main {
 
 
     var i = 0
-    while (true) {
+    while (i<100) {
       i+=1
       var output = ""
       output += Generator.generate()
-      Thread.sleep(2000)//2 seconds
+      Thread.sleep(500)//2 seconds
       println(output)
       producer.send(new ProducerRecord[Int, String](topicName, i, output))
 
