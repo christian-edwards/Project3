@@ -118,14 +118,20 @@ object Generator {
       if (ID < 0) {
         return "Error: Category Not Found"
       }
-      this.theCountess(ID) += 1 // instead of generic count
       i = 0
-      if (this.theCountess(ID) > 25) { // copy of generate()  // insert various conditions here
-        this.i  = this.rando.nextInt(250) + 250 // upToRoof + floor
-      } else if (this.theCountess(ID) > 10) {
-        this.i  = this.rando.nextInt(150) + 100
-      } else {
-        this.i = this.rando.nextInt(100)
+      category match {
+        case "Computers & Accessories" => // weighted to be larger sales
+          this.i = this.rando.nextInt(375) + 375 // upToRoof + floor
+        case "Home Audio" => // weighted to be larger sales
+          this.i = this.rando.nextInt(375) + 375
+        case "Hard Drives" =>
+            this.i = this.rando.nextInt(99) + 1
+        case "Home Security" => // weighted to be constant sales
+          this.i = this.rando.nextInt(25) + 25
+        case "TV" => // weighted to be smaller sales
+          this.i = this.rando.nextInt(25) + 25
+        case default =>
+          this.i = this.rando.nextInt(150) + 100
       }
       i.toString
     }
