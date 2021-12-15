@@ -13,11 +13,11 @@ object ConsumerPlayground extends App {
   var c = new CSV()
   c.writeHeader()
 
-  // val topicName = "sql_dolphins"
-  val topicName = "hadoop_elephants"
+  val topicName = "sql_dolphins"
+  //val topicName = "hadoop_elephants"
 
   val consumerProperties = new Properties()
-  consumerProperties.setProperty(BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
+  consumerProperties.setProperty(BOOTSTRAP_SERVERS_CONFIG, sys.env("sm")) //localhost:9092
   consumerProperties.setProperty(GROUP_ID_CONFIG, "group-id-2")
   consumerProperties.setProperty(AUTO_OFFSET_RESET_CONFIG, "latest")
   consumerProperties.setProperty(KEY_DESERIALIZER_CLASS_CONFIG, classOf[IntegerDeserializer].getName)

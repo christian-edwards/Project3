@@ -8,3 +8,5 @@
 out
 .vscode
 target
+Stream.csv
+metastore_db
